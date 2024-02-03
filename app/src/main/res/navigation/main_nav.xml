@@ -60,6 +60,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_startLocationFragment_to_correctionFragment"
+            app:destination="@id/correctionFragment" />
     </fragment>
     <fragment
         android:id="@+id/recordingFragment"
@@ -67,15 +70,13 @@
         android:label="fragment_recording"
         tools:layout="@layout/fragment_recording" >
         <action
-            android:id="@+id/action_recordingFragment_to_correctionFragment"
-            app:destination="@id/correctionFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
-        <action
             android:id="@+id/action_recordingFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_recordingFragment_to_correctionFragment"
+            app:destination="@id/correctionFragment" />
     </fragment>
     <fragment
         android:id="@+id/infoFragment"
