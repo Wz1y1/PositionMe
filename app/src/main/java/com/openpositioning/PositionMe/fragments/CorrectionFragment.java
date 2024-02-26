@@ -112,7 +112,7 @@ public class CorrectionFragment extends Fragment {
             @Override
             public void onMapReady(GoogleMap map) {
                 mMap = map;
-                mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 mMap.getUiSettings().setCompassEnabled(true);
                 mMap.getUiSettings().setTiltGesturesEnabled(true);
                 mMap.getUiSettings().setRotateGesturesEnabled(true);

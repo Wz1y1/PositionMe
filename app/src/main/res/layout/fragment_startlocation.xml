@@ -24,6 +24,7 @@
             android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
                 android:layout_width="match_parent"
                 android:layout_height="40sp"
                 android:layout_marginStart="8dp"
@@ -39,60 +40,202 @@
                 app:layout_constraintVertical_bias="0.0">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/locationInstructionsText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="@string/locationInstructions"
-                        android:textColor="@color/LightYellow"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_width="365dp"
+                    android:layout_height="wrap_content">
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/locationInstructionsText"
+                    android:layout_width="395dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/locationInstructions"
+                    android:textColor="@color/LightYellow"
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
+
 
             <Button
                 android:id="@+id/startLocationDone"
-                android:layout_width="150dp"
-                android:layout_height="70dp"
-                android:layout_marginBottom="24dp"
+                android:layout_width="111dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
                 android:text="@string/setLocation"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 app:icon="@drawable/ic_baseline_add_location_24"
-                app:iconGravity="start"
-                app:iconSize="30dp"
+                app:iconSize="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/buttonFloorUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Up"
-                android:visibility="gone"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChangeMapType"
+                android:layout_width="38dp"
+                android:layout_height="39dp"
+                android:layout_margin="16dp"
+                app:icon="@drawable/layer_icon"
+                android:background="@drawable/button_round_outline"
+                app:iconSize="25dp"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/buttonFloorDown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.081" />
 
-            <Button
-                android:id="@+id/buttonFloorDown"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Down"
+
+            <!-- Up Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonFloorUp"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="80dp"
+                app:icon="@drawable/upstair_icon"
+                app:iconSize="30dp"
+                android:background="@drawable/button_square_outline"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/buttonFloorUp"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- Down Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonFloorDown"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="8dp"
+                app:icon="@drawable/down_stair_icon"
+                app:iconSize="30dp"
+                android:background="@drawable/button_square_outline"
+                app:iconPadding="0dp"
+                app:iconGravity="textStart"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/buttonFloorUp"
+                app:layout_constraintTop_toBottomOf="@+id/buttonFloorUp" />
+
+
+            <!-- Altitude CardView -->
+
+            <LinearLayout
+                android:id="@+id/linearLayoutBuildingInfo"
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="24dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/btnChangeMapType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                <TextView
+                    android:id="@+id/textViewBuildingName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Building Name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/textViewFloorNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Floor Number"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewAltitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#ADD8E6"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardViewLatitude"
+                app:layout_constraintStart_toStartOf="@+id/cardViewLatitude">
+
+                <TextView
+                    android:id="@+id/altitudeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="ALT: " />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Latitude CardView -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewLatitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#ADD8E6"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardViewLongitude"
+                app:layout_constraintStart_toStartOf="@+id/cardViewLongitude">
+
+                <TextView
+                    android:id="@+id/latitudeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="LAT: " />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Longitude CardView -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewLongitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#ADD8E6"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardViewAccuracy"
+                app:layout_constraintStart_toStartOf="@+id/cardViewAccuracy">
+
+                <TextView
+                    android:id="@+id/longitudeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="LNT: " />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Accuracy CardView -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewAccuracy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                app:cardBackgroundColor="#ADD8E6"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/startLocationDone">
+
+                <TextView
+                    android:id="@+id/accuracyTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="ACC: " />
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
